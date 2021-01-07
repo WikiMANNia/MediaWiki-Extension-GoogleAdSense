@@ -18,14 +18,24 @@ class GoogleAdSense {
 
 		// Return $bar unchanged if not all values have been set.
 		// @todo Signal incorrect configuration nicely?
-		if ( $wgGoogleAdSenseClient == 'none' || $wgGoogleAdSenseSlot == 'none' || $wgGoogleAdSenseID == 'none' )
-			return $bar;
-
-		if ( $skin->getUser()->isLoggedIn() && $wgGoogleAdSenseAnonOnly ) {
+		if ( empty( $wgGoogleAdSenseID )
+			|| empty( $wgGoogleAdSenseClient ) || ( $wgGoogleAdSenseClient == 'none' )
+			|| empty( $wgGoogleAdSenseSlot ) || ( $wgGoogleAdSenseSlot == 'none' )
+		) {
+			$bar['googleadsense-portletlabel'] = false;
 			return $bar;
 		}
 
-		if ( !$wgGoogleAdSenseSrc ) {
+		if ( $skin->getUser()->isLoggedIn() && $wgGoogleAdSenseAnonOnly ) {
+			$bar['googleadsense-portletlabel'] = false;
+			return $bar;
+		}
+
+		$width  = self::getAndCheckValue( $wgGoogleAdSenseWidth );
+		$height = self::getAndCheckValue( $wgGoogleAdSenseHeight );
+
+		if ( ( $width === false ) || ( $height === false ) || empty( $wgGoogleAdSenseSrc ) ) {
+			$bar['googleadsense-portletlabel'] = false;
 			return $bar;
 		}
 
@@ -47,5 +57,22 @@ src=\"$wgGoogleAdSenseSrc\">
 </script>";
 
 		return true;
+	}
+
+	private static function getAndCheckValue( $value ) {
+
+		if ( empty( $value ) ) {
+			return false;
+		}
+
+		if ( $value === 'auto' ) {
+			return 'auto';
+		}
+
+		if ( is_int( $value ) ) {
+			return intval( $value );
+		}
+
+		return false;
 	}
 }
