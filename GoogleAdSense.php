@@ -41,7 +41,7 @@ $wgGoogleAdSenseAnonOnly = false; // Show the AdSense box only for anonymous use
 $wgExtensionCredits['other'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'Google AdSense',
-	'namemsg'       => 'googleadsense-extensionname',
+	'namemsg'        => 'googleadsense-extensionname',
 	'version'        => '2.2.0',
 	'author'         => 'Siebrand Mazeland',
 	'descriptionmsg' => 'googleadsense-desc',
@@ -50,11 +50,12 @@ $wgExtensionCredits['other'][] = array(
 );
 
 // Register class and localisations
-$wgAutoloadClasses['GoogleAdSense'] = __DIR__ . '/GoogleAdSense.class.php';
+$wgAutoloadClasses['GoogleAdSenseHooks'] = __DIR__ . '/includes/specials/HooksGoogleAdSense.php';
+
 $wgMessagesDirs['GoogleAdSense'] = __DIR__ . '/i18n';
 
 // Hook to modify the sidebar
-$wgHooks['SkinBuildSidebar'][] = 'GoogleAdSense::GoogleAdSenseInSidebar';
+$wgHooks['SkinBuildSidebar'][] = 'GoogleAdSenseHooks::onSkinBuildSidebar';
 
 // Client-side resource modules
 $wgResourceModules['ext.googleadsense'] = array(
