@@ -1,6 +1,6 @@
 <?php
 /**
- * Class file for the GoogleAdSense extension
+ * Hooks Class file for the GoogleAdSense extension
  *
  * @file
  * @ingroup Extensions
@@ -8,8 +8,18 @@
  * @license MIT
  */
 
-class GoogleAdSense {
-	static function GoogleAdSenseInSidebar( $skin, &$bar ) {
+class GoogleAdSenseHooks extends Hooks {
+
+	/**
+	 * Hook: SkinBuildSidebar
+	 * @param Skin $skin
+	 * @param array $bar
+	 * https://www.mediawiki.org/wiki/Manual:Hooks/SkinBuildSidebar
+	 */
+	public static function onSkinBuildSidebar(
+		Skin $skin,
+		array &$bar
+	) {
 		global $wgGoogleAdSenseWidth, $wgGoogleAdSenseID,
 			$wgGoogleAdSenseHeight, $wgGoogleAdSenseClient,
 			$wgGoogleAdSenseSlot, $wgGoogleAdSenseSrc,
