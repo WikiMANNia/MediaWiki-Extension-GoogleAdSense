@@ -25,7 +25,10 @@ class GoogleAdSense {
 			return $bar;
 		}
 
-		if ( !$wgGoogleAdSenseSrc ) {
+		$width  = self::getAndCheckValue( $wgGoogleAdSenseWidth );
+		$height = self::getAndCheckValue( $wgGoogleAdSenseHeight );
+
+		if ( ( $width === false ) || ( $height === false ) || empty( $wgGoogleAdSenseSrc ) ) {
 			return $bar;
 		}
 
@@ -47,5 +50,22 @@ src=\"$wgGoogleAdSenseSrc\">
 </script>";
 
 		return true;
+	}
+
+	private static function getAndCheckValue( $value ) {
+
+		if ( empty( $value ) ) {
+			return false;
+		}
+
+		if ( $value === 'auto' ) {
+			return 'auto';
+		}
+
+		if ( is_int( $value ) ) {
+			return intval( $value );
+		}
+
+		return false;
 	}
 }
