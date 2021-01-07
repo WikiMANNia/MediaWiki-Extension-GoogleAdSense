@@ -19,7 +19,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"GoogleAdSense": "GoogleAdSense.class.php"
+		"GoogleAdSenseHooks": "includes/specials/HooksGoogleAdSense.php"
 	},
 	"ResourceModules": {
 		"ext.googleadsense": {
@@ -31,7 +31,7 @@
 		"remoteExtPath": "GoogleAdSense"
 	},
 	"Hooks": {
-		"SkinBuildSidebar": "GoogleAdSense::GoogleAdSenseInSidebar"
+		"SkinBuildSidebar": "GoogleAdSenseHooks::onSkinBuildSidebar"
 	},
 	"config": {
 		"GoogleAdSenseClient": {
