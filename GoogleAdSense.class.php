@@ -29,7 +29,10 @@ class GoogleAdSense {
 			return $bar;
 		}
 
-		if ( !$wgGoogleAdSenseSrc ) {
+		$width  = self::getAndCheckValue( $wgGoogleAdSenseWidth );
+		$height = self::getAndCheckValue( $wgGoogleAdSenseHeight );
+
+		if ( ( $width === false ) || ( $height === false ) || empty( $wgGoogleAdSenseSrc ) ) {
 			return $bar;
 		}
 
@@ -40,8 +43,8 @@ class GoogleAdSense {
 google_ad_client = \"$wgGoogleAdSenseClient\";
 /* $wgGoogleAdSenseID */
 google_ad_slot = \"$wgGoogleAdSenseSlot\";
-google_ad_width = " . intval( $wgGoogleAdSenseWidth ) . ";
-google_ad_height = " . intval( $wgGoogleAdSenseHeight ) . ";
+google_ad_width = " . $width . ";
+google_ad_height = " . $height . ";
 google_language = \"$wgGoogleAdSenseLang\";
 google_encoding = \"$wgGoogleAdSenseEncoding\";
 // -->
@@ -51,5 +54,22 @@ src=\"$wgGoogleAdSenseSrc\">
 </script>";
 
 		return true;
+	}
+
+	private static function getAndCheckValue( $value ) {
+
+		if ( empty( $value ) ) {
+			return false;
+		}
+
+		if ( $value === 'auto' ) {
+			return 'auto';
+		}
+
+		if ( is_int( $value ) ) {
+			return intval( $value );
+		}
+
+		return false;
 	}
 }
