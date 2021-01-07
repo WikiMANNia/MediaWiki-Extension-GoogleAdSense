@@ -18,8 +18,12 @@ class GoogleAdSense {
 
 		// Return $bar unchanged if not all values have been set.
 		// @todo Signal incorrect configuration nicely?
-		if ( $wgGoogleAdSenseClient == 'none' || $wgGoogleAdSenseSlot == 'none' || $wgGoogleAdSenseID == 'none' )
+		if ( empty( $wgGoogleAdSenseID )
+			|| empty( $wgGoogleAdSenseClient ) || ( $wgGoogleAdSenseClient == 'none' )
+			|| empty( $wgGoogleAdSenseSlot ) || ( $wgGoogleAdSenseSlot == 'none' )
+		) {
 			return $bar;
+		}
 
 		if ( $skin->getUser()->isLoggedIn() && $wgGoogleAdSenseAnonOnly ) {
 			return $bar;
