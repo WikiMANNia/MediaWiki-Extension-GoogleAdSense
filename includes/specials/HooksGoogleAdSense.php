@@ -55,6 +55,8 @@ google_ad_client = \"$wgGoogleAdSenseClient\";
 google_ad_slot = \"$wgGoogleAdSenseSlot\";
 google_ad_width = " . $width . ";
 google_ad_height = " . $height . ";
+google_language = \"$wgGoogleAdSenseLang\";
+google_encoding = \"$wgGoogleAdSenseEncoding\";
 // -->
 </script>
 <script type=\"text/javascript\"
