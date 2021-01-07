@@ -1,7 +1,7 @@
 {
 	"name": "Google AdSense",
 	"namemsg": "googleadsense-extensionname",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"author": [
 		"Siebrand Mazeland",
 		"Zoranzoki21"
