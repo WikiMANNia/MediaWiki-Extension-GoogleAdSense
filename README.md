@@ -31,6 +31,9 @@ Source URL of the AdSense script. No need to change - it can't deviate from the 
 This can be anything you like. Default is 'none'.
 * $wgGoogleAdSenseID = "none";
 
+Text coding. Default is 'utf8'.
+* $wgGoogleAdSenseEncoding = "utf8";
+
+Advertising language. Default is 'en'.
 * $wgGoogleAdSenseLang = "en";
 
-* $wgGoogleAdSenseEncoding = "utf8";
