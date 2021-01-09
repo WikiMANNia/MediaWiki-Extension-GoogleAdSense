@@ -24,7 +24,7 @@ class GoogleAdSenseHooks extends Hooks {
 			$wgGoogleAdSenseHeight, $wgGoogleAdSenseClient,
 			$wgGoogleAdSenseLang, $wgGoogleAdSenseEncoding,
 			$wgGoogleAdSenseSlot, $wgGoogleAdSenseSrc,
-			$wgGoogleAdSenseAnonOnly;
+			$wgGoogleAdSenseAnonOnly, $wgLanguageCode;
 
 		// Return $bar unchanged if not all values have been set.
 		// @todo Signal incorrect configuration nicely?
@@ -50,14 +50,17 @@ class GoogleAdSenseHooks extends Hooks {
 		// Add CSS
 		$skin->getOutput()->addModules( 'ext.googleadsense' );
 
+		$language = empty( $wgGoogleAdSenseLang ) ? $wgLanguageCode : $wgGoogleAdSenseLang;
+		$encoding = empty( $wgGoogleAdSenseEncoding ) ? 'utf8' : $wgGoogleAdSenseEncoding;
+
 		$bar['googleadsense-portletlabel'] = "<script type=\"text/javascript\"><!--
 google_ad_client = \"$wgGoogleAdSenseClient\";
 /* $wgGoogleAdSenseID */
 google_ad_slot = \"$wgGoogleAdSenseSlot\";
 google_ad_width = " . $width . ";
 google_ad_height = " . $height . ";
-google_language = \"$wgGoogleAdSenseLang\";
-google_encoding = \"$wgGoogleAdSenseEncoding\";
+google_language = \"$language\";
+google_encoding = \"$encoding\";
 // -->
 </script>
 <script type=\"text/javascript\"
