@@ -32,10 +32,12 @@ class GoogleAdSenseHooks extends Hooks {
 			|| empty( $wgGoogleAdSenseClient ) || ( $wgGoogleAdSenseClient == 'none' )
 			|| empty( $wgGoogleAdSenseSlot ) || ( $wgGoogleAdSenseSlot == 'none' )
 		) {
+			$bar['googleadsense-portletlabel'] = false;
 			return $bar;
 		}
 
 		if ( $skin->getUser()->isLoggedIn() && $wgGoogleAdSenseAnonOnly ) {
+			$bar['googleadsense-portletlabel'] = false;
 			return $bar;
 		}
 
@@ -43,6 +45,7 @@ class GoogleAdSenseHooks extends Hooks {
 		$height = self::getAndCheckValue( $wgGoogleAdSenseHeight );
 
 		if ( ( $width === false ) || ( $height === false ) || empty( $wgGoogleAdSenseSrc ) ) {
+			$bar['googleadsense-portletlabel'] = false;
 			return $bar;
 		}
 
