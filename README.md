@@ -3,15 +3,12 @@ Allows to add Google AdSense to the sidebar
 
 ## Configuration options
 
-Enable or disable the GoogleAdSense
-true = enabled
-false = disabled
-'not set' = disabled
+Enable GoogleAdSense. Default is false.
 
 * $wgGoogleAdSense = true;
 
 Show the AdSense box only for anonymous users: true or false. Default is false.
-* $wgGoogleAdSenseAnonOnly = true|false;
+* $wgGoogleAdSenseAnonOnly = true;
 
 Replace this with your own publisher ID (google_ad_client / data-ad-client)
 * $wgGoogleAdSenseClient = 'none'; // Client ID for your AdSense script (example: ca-pub-1234546403419693)
@@ -34,6 +31,6 @@ This can be anything you like. Default is 'none'.
 Text coding. Default is 'utf8'.
 * $wgGoogleAdSenseEncoding = "utf8";
 
-Advertising language. Default is 'en'.
+Advertising language. Default is $wgLanguageCode.
 * $wgGoogleAdSenseLang = "en";
 
