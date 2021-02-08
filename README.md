@@ -1,6 +1,8 @@
 # MediaWiki-Extension-GoogleAdSense
 Allows to add Google AdSense to the sidebar
 
+For more than one ad unit see [MediaWiki-Extension-WimaAdvertising](https://github.com/WikiMANNia/MediaWiki-Extension-WimaAdvertising)
+
 ## Configuration options
 
 Enable GoogleAdSense. Default is false.
