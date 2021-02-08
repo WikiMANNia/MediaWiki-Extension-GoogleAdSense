@@ -5,7 +5,7 @@
 		]
 	},
 	"googleadsense": "Google AdSense",
-	"googleadsense-extensionname": "Google AdSense",
+	"googleadsense-msg": "Google AdSense",
 	"googleadsense-desc": "Adds [http://www.google.com/adsense Google AdSense] to the sidebar",
-	"googleadsense-portletlabel": "Advertisements"
+	"googleadsense": "Advertisements"
 }

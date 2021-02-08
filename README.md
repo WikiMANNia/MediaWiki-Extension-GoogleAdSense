@@ -1,13 +1,4 @@
 # MediaWiki-Extension-GoogleAdSense
-
-Die Pflege dieses Forks der MediaWiki-Erweiterung [GoogleAdSense](https://www.mediawiki.org/wiki/Extension:GoogleAdSense) wird von WikiMANNia verwaltet.
-
-The maintenance of this fork of the MediaWiki extension [GoogleAdSense](https://www.mediawiki.org/wiki/Extension:GoogleAdSense) is managed by WikiMANNia.
-
-El mantenimiento de esta bifurcación de la extensión de MediaWiki [GoogleAdSense](https://www.mediawiki.org/wiki/Extension:GoogleAdSense) está gestionado por WikiMANNia.
-
-## Description
-
 Allows to add Google AdSense to the sidebar
 
 ## Configuration options

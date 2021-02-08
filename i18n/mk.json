@@ -4,7 +4,7 @@
 			"Bjankuloski06"
 		]
 	},
-	"googleadsense-extensionname": "Google AdSense",
+	"googleadsense-msg": "Google AdSense",
 	"googleadsense-desc": "Го додава [http://www.google.com/adsense Google AdSense] во страничникот",
-	"googleadsense-portletlabel": "Реклами"
+	"googleadsense": "Реклами"
 }

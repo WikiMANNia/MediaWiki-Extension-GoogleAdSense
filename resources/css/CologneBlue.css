@@ -1,0 +1,33 @@
+/**
+ * CSS for CologneBlue
+ */
+
+#p-googleadsense img {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#p-googleadsense p {
+	font-weight: normal;
+	line-height: 1.2em;
+	margin: 2pt 2pt 0 5pt;
+	color: #333;
+}
+#p-googleadsense p.small {
+	font-size: .75em;
+}
+#quickbar .wima-adbox {
+	border: #68a solid 2px;
+	background-color: #fff;
+	margin-left: -4px;
+	padding-bottom: 4px;
+}
+#siteNotice p {
+	margin-bottom: 0 !important;
+}
+#mw-data-after-content {
+	margin-left: 148px;
+	margin-right: 4px;
+	width: auto;
+}

@@ -1,66 +1,55 @@
 {
 	"name": "Google AdSense",
-	"namemsg": "googleadsense-extensionname",
-	"version": "3.1.0",
 	"author": [
 		"Siebrand Mazeland",
-		"Zoranzoki21"
+		"Zoranzoki21",
+		"WikiMANNia"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Google_AdSense",
-	"descriptionmsg": "googleadsense-desc",
 	"license-name": "MIT",
+	"version": "4.0.0",
+	"namemsg": "googleadsense-msg",
+	"descriptionmsg": "googleadsense-desc",
+	"config": {
+		"GoogleAdSense": true,
+		"GoogleAdSenseClient": "none",
+		"GoogleAdSenseSlot": "none",
+		"GoogleAdSenseID": "none",
+		"GoogleAdSenseWidth": 120,
+		"GoogleAdSenseHeight": 240,
+		"GoogleAdSenseLang": "en",
+		"GoogleAdSenseEncoding": "utf8",
+		"GoogleAdSenseSrc": "//pagead2.googlesyndication.com/pagead/show_ads.js",
+		"GoogleAdSenseAnonOnly": false
+	},
+	"manifest_version": 1,
 	"type": "other",
-	"requires": {
-		"MediaWiki": ">= 1.29.0"
-	},
-	"MessagesDirs": {
-		"GoogleAdSense": [
-			"i18n"
-		]
-	},
 	"AutoloadClasses": {
 		"GoogleAdSenseHooks": "includes/specials/HooksGoogleAdSense.php"
 	},
+	"Hooks": {
+	    "BeforePageDisplay": "GoogleAdSenseHooks::onBeforePageDisplay",
+		"SkinBuildSidebar": "GoogleAdSenseHooks::onSkinBuildSidebar"
+	},
+	"MessagesDirs": {
+		"GoogleAdSense": [ "i18n" ]
+	},
 	"ResourceModules": {
-		"ext.googleadsense": {
-			"styles": "resources/ext.googleadsense.css"
+		"ext.googleadsense.cologneblue": {
+			"styles": "css/CologneBlue.css"
+		},
+		"ext.googleadsense.modern": {
+			"styles": "css/Modern.css"
+		},
+		"ext.googleadsense.monobook": {
+			"styles": "css/MonoBook.css"
+		},
+		"ext.googleadsense.vector": {
+			"styles": "css/Vector.css"
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteExtPath": "GoogleAdSense"
-	},
-	"Hooks": {
-		"SkinBuildSidebar": "GoogleAdSenseHooks::onSkinBuildSidebar"
-	},
-	"config": {
-		"GoogleAdSenseClient": {
-			"value": "none"
-		},
-		"GoogleAdSenseSlot": {
-			"value": "none"
-		},
-		"GoogleAdSenseID": {
-			"value": "none"
-		},
-		"GoogleAdSenseWidth": {
-			"value": 120
-		},
-		"GoogleAdSenseHeight": {
-			"value": 240
-		},
-		"GoogleAdSenseLang": {
-			"value": "en"
-		},
-		"GoogleAdSenseEncoding": {
-			"value": "utf8"
-		},
-		"GoogleAdSenseSrc": {
-			"value": "//pagead2.googlesyndication.com/pagead/show_ads.js"
-		},
-		"GoogleAdSenseAnonOnly": {
-			"value": false
-		}
-	},
-	"manifest_version": 2
+		"localBasePath": "resources",
+		"remoteExtPath": "GoogleAdSense/resources"
+	}
 }

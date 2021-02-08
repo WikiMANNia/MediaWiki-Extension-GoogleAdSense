@@ -1,0 +1,30 @@
+/**
+ * CSS for Modern
+ */
+
+#p-googleadsense .portlet {
+	margin: 0;
+	width: auto;
+}
+#p-googleadsense .pBody {
+	background-color: #fff;
+	border: 1px solid #aaa;
+	padding: 0 0 0.3em 0;
+}
+#p-googleadsense img {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#p-googleadsense p {
+	color: #333;
+	font-size: .9em;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin: 0 0 0.5em;
+	padding: 0 0.2em 0 0.5em;
+}
+#p-googleadsense p.small {
+	font-size: .8em;
+}

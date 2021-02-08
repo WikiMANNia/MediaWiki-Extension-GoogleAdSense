@@ -7,8 +7,7 @@
 			"Umherirrender"
 		]
 	},
-	"googleadsense": "{{notranslate}}",
-	"googleadsense-extensionname": "{{name}}",
+	"googleadsense-msg": "{{name}}",
 	"googleadsense-desc": "{{desc|name=Google AdSense|url=https://www.mediawiki.org/wiki/Extension:GoogleAdSense}}",
-	"googleadsense-portletlabel": "Header in the sidebar the Google AdSense box appears under."
+	"googleadsense": "Header in the sidebar the Google AdSense box appears under."
 }
